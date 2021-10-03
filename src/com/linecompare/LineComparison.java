@@ -1,5 +1,5 @@
 package com.linecompare;
-import java.util.*;
+
 /**
  * Line Comparison Computation Program
  * 
@@ -31,16 +31,33 @@ public class LineComparison {
 		int distance1 = (int) Math.sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
 		// Display the result
 		System.out.println("distance between" + "(" + x3 + "," + y3 + ")," + "(" + x4 + "," + y4 + ")==>" + distance1);
-		
-		//Convert primitive Data type into objects
-		Integer integer=Integer.valueOf(distance);
-		Integer integer1=Integer.valueOf(distance1);
-		
-		/**equal method compares the two given number. 
-		 * If any number is not matched, it returns false.
-		 *  If all number are matched, it returns true.
+
+		// Convert primitive Data type into objects
+		Integer integer = Integer.valueOf(distance);
+		Integer integer1 = Integer.valueOf(distance1);
+
+		/**
+		 * equal method compares the two given number. If any number is not matched, it
+		 * returns false. If all number are matched, it returns true.
 		 */
 		System.out.println(integer.equals(integer1));
+
+		// compareTo() method compares two Integer objects numerically.
+		int result = integer.compareTo(integer1);
+		System.out.println(result);
+
+		if (result > 0)
+			// value greater than 0 if Integer is numerically greater than the argument
+			// Integer.
+			System.out.println("distance of first line greater than distance1 of sec line");
+		else if (result < 0)
+			// a value less than 0 if Integer is numerically less than the argument
+			// Integer
+			System.out.println("distance of first line less than distance1 of sec line");
+		else
+			// method returns the value 0 if Integer is equal to the argument Integer
+			System.out.println("first line distance is equals to sec line distance1");
+
 	}
 
 }
