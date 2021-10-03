@@ -1,5 +1,5 @@
 package com.linecompare;
-
+import java.util.*;
 /**
  * Line Comparison Computation Program
  * 
@@ -31,6 +31,16 @@ public class LineComparison {
 		int distance1 = (int) Math.sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
 		// Display the result
 		System.out.println("distance between" + "(" + x3 + "," + y3 + ")," + "(" + x4 + "," + y4 + ")==>" + distance1);
+		
+		//Convert primitive Data type into objects
+		Integer integer=Integer.valueOf(distance);
+		Integer integer1=Integer.valueOf(distance1);
+		
+		/**equal method compares the two given number. 
+		 * If any number is not matched, it returns false.
+		 *  If all number are matched, it returns true.
+		 */
+		System.out.println(integer.equals(integer1));
 	}
 
 }
