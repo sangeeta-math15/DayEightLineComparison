@@ -6,40 +6,53 @@ package com.linecompare;
  * @author CHANDRU
  *
  */
+class LineEqual {
+	int x1, x2, x3, x4;
+	int y1, y2, y3, y4;
+
+	void insert(int a, int b, int c, int d, int e, int f, int g, int h) {
+		x1 = a;
+		x2 = b;
+		x3 = c;
+		x4 = d;
+		y1 = e;
+		y2 = f;
+		y3 = g;
+		y4 = h;
+
+	}
+
+	int checkDistanceOne() {
+		// Calculate the distance between x and y coordinates
+		int distance = (int) Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+		// Display the result
+		System.out.println("distance between" + "(" + x1 + "," + y1 + ")," + "(" + x2 + "," + y2 + ")==>" + distance);
+		return distance;
+
+	}
+
+	int checkDistanceTwo() {
+		// Calculate the distance between x and y coordinates
+		int distance1 = (int) Math.sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
+		// Display the result
+		System.out.println("distance between" + "(" + x3 + "," + y3 + ")," + "(" + x4 + "," + y4 + ")==>" + distance1);
+		return distance1;
+
+	}
+}
+
 public class LineComparison {
 
 	public static void main(String[] args) {
 
 		System.out.println("Welcome to Line Comparison Computation Program on Master Branch");
 
-		// declare variables and assign values to coordinates
-		int x1 = 4;
-		int y1 = 4;
-		int x2 = 1;
-		int y2 = 1;
-		int x3 = 5;
-		int y3 = 3;
-		int x4 = 2;
-		int y4 = 2;
+		LineEqual eq = new LineEqual();
+		eq.insert(4, 4, 1, 1, 5, 3, 2, 2);
 
-		// Calculate the distance between x and y coordinates
-		int distance = (int) Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-		// Display the result
-		System.out.println("distance between" + "(" + x1 + "," + y1 + ")," + "(" + x2 + "," + y2 + ")==>" + distance);
+		Integer integer = eq.checkDistanceOne();
+		Integer integer1 = eq.checkDistanceTwo();
 
-		// Calculate the distance between x and y coordinates
-		int distance1 = (int) Math.sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
-		// Display the result
-		System.out.println("distance between" + "(" + x3 + "," + y3 + ")," + "(" + x4 + "," + y4 + ")==>" + distance1);
-
-		// Convert primitive Data type into objects
-		Integer integer = Integer.valueOf(distance);
-		Integer integer1 = Integer.valueOf(distance1);
-
-		/**
-		 * equal method compares the two given number. If any number is not matched, it
-		 * returns false. If all number are matched, it returns true.
-		 */
 		System.out.println(integer.equals(integer1));
 
 		// compareTo() method compares two Integer objects numerically.
